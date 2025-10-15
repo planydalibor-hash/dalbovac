@@ -64,7 +64,8 @@ export default function Page() {
                 </tr>
               </thead>
               <tbody>
-                {mockOffers.map((o, i) => <PriceRow key={i} offer={o} index={i} />)}
+{mockOffers.map((o, i) => <PriceRow key={i} offer={o} />)}
+
               </tbody>
             </table>
           </div>
