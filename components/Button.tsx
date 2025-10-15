@@ -1,6 +1,5 @@
 import React from "react";
-import { clsx } from "clsx";
-
+import clsx from "clsx";
 type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & { variant?: "primary" | "ghost" };
 
 export default function Button({ className, variant = "primary", ...props }: Props) {
