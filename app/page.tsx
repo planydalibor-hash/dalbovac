@@ -2,6 +2,7 @@ import Card from "../components/Card";
 import Button from "../components/Button";
 import PriceRow, { Offer } from "../components/PriceRow";
 
+
 const mockOffers: Offer[] = [
   { vendor: "Stavmi.cz", sqmPrice: 202.31, totalPrice: 50577.5, badge: "🟩" },
   { vendor: "nejlevnejsi-polystyren.cz", sqmPrice: 216.8, totalPrice: 54200, badge: "🟨" },
