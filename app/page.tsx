@@ -2,7 +2,6 @@ import Card from "../components/Card";
 import Button from "../components/Button";
 import PriceRow, { Offer } from "../components/PriceRow";
 
-
 const mockOffers: Offer[] = [
   { vendor: "Stavmi.cz", sqmPrice: 202.31, totalPrice: 50577.5, badge: "🟩" },
   { vendor: "nejlevnejsi-polystyren.cz", sqmPrice: 216.8, totalPrice: 54200, badge: "🟨" },
@@ -14,6 +13,7 @@ const mockOffers: Offer[] = [
 export default function Page() {
   return (
     <main className="max-w-6xl mx-auto px-4 pb-24">
+      {/* Header */}
       <header className="flex items-center justify-between py-6">
         <div className="flex items-center gap-3">
           <img src="/logo.svg" alt="Dalbovač" className="h-8 w-8" />
@@ -27,6 +27,7 @@ export default function Page() {
         <Button>Zjistit cenu</Button>
       </header>
 
+      {/* Srovnání */}
       <section className="grid md:grid-cols-2 gap-6 items-center pt-6">
         <div>
           <h1 className="text-4xl md:text-5xl font-black leading-tight">
@@ -42,6 +43,7 @@ export default function Page() {
           </form>
           <p className="mt-2 text-xs opacity-60">Styl inspirovaný klik.cz • demo data</p>
         </div>
+
         <Card className="p-0 overflow-hidden">
           <div className="p-5 border-b border-white/10 flex items-center justify-between">
             <div>
@@ -64,18 +66,18 @@ export default function Page() {
                 </tr>
               </thead>
               <tbody>
-{mockOffers.map((o, i) => <PriceRow key={i} offer={o} />)}
-
+                {mockOffers.map((o, i) => <PriceRow key={i} offer={o} />)}
               </tbody>
             </table>
           </div>
         </Card>
       </section>
 
+      {/* Jak to funguje */}
       <section id="jak-to-funguje" className="mt-16 grid md:grid-cols-3 gap-4">
         {[
           ["1. Zadáte materiál", "Vyberete přesný typ, rozměr a množství."],
-          ["2. Porovnáme nabídky", "Projdeme dostupné e‑shopy a stavebniny."],
+          ["2. Porovnáme nabídky", "Projdeme dostupné e-shopy a stavebniny."],
           ["3. Pošleme nej cenu", "Okamžitě uvidíte přehled a můžete nakoupit."]
         ].map(([title, desc], i) => (
           <Card key={i}>
@@ -85,13 +87,14 @@ export default function Page() {
         ))}
       </section>
 
+      {/* FAQ */}
       <section id="faq" className="mt-16">
         <h2 className="text-2xl font-bold mb-4">Časté dotazy</h2>
         <div className="space-y-3">
           {[
             ["Je to zdarma?", "Základní porovnání je zdarma. Připravujeme prémiové funkce."],
             ["Jak často aktualizujete ceny?", "Ceny jsou demo. Do produkce napojíme více zdrojů a aktualizace budou denní."],
-            ["Můžu si nechat poslat nabídku e‑mailem?", "Ano, do formuláře přidáme e‑mail a PDF export."]
+            ["Můžu si nechat poslat nabídku e-mailem?", "Ano, do formuláře přidáme e-mail a PDF export."]
           ].map(([q, a], i) => (
             <Card key={i}>
               <div className="font-semibold">{q}</div>
@@ -101,6 +104,7 @@ export default function Page() {
         </div>
       </section>
 
+      {/* Footer */}
       <footer className="mt-16 text-xs opacity-60">
         © {new Date().getFullYear()} Dalbovač • Vytvořeno v Next.js
       </footer>
